@@ -123,7 +123,7 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]]
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
-    public static int[][] sortRaggedArray(int[][] arr) {
+    public int[][] sortRaggedArray(int[][] arr) {
         for (int[] arr1 : arr) {
             for (int j = 0; j < arr1.length; j++) {
                 int min = arr1[j];
@@ -142,7 +142,7 @@ public class ArrayTasks {
             int minLen = arr[j].length;
             int index = j;
             for (int k = j; k < arr.length; k++) {
-                if(arr[k].length < minLen){
+                if (arr[k].length < minLen) {
                     minLen = arr[k].length;
                     index = k;
                 }
@@ -152,16 +152,5 @@ public class ArrayTasks {
             arr[j] = tmp;
         }
         return arr;
-    }
-
-    public static void main(String[] args) {
-        int[][] ints = sortRaggedArray(new int[][]{{12}, {-484, 172}, {-712, -324, -208},
-                {-998, -454, -30}, {19}, {-441, -287, 137, 707}, {48, 817, 860}, {18}, {17, 23}});
-        for (int[] anInt : ints) {
-            for (int i : anInt) {
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }
     }
 }
