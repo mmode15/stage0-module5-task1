@@ -147,9 +147,12 @@ public class ArrayTasks {
                     index = k;
                 }
             }
-            int[] tmp = arr[index];
-            arr[index] = arr[j];
-            arr[j] = tmp;
+            for(int k = index; k>j; k--){
+                int[] tmp = arr[k];
+                arr[k] = arr[k-1];
+                arr[k-1] = tmp;
+            }
+
         }
         return arr;
     }
